@@ -1,0 +1,26 @@
+{
+  "name": "enterprise-playwright",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "playwright.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+  "test": "playwright test",
+  "test:headed": "playwright test --headed",
+  "test:smoke": "playwright test --grep \"@smoke\"",
+  "test:qa": "playwright test --project=qa-chromium",
+  "test:uat": "playwright test --project=uat-chromium",
+  "report": "playwright show-report"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "dotenv": "^17.4.2",
+    "xlsx": "^0.18.5"
+  }
+}
