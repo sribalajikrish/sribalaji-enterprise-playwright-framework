@@ -11,6 +11,8 @@ jobs:
 
   test:
 
+    environment: QA
+
     runs-on: ubuntu-latest
 
     steps:
