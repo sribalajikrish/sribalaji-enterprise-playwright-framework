@@ -23,7 +23,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    headless: true,
+    headless: false,
   },
 
   projects: [
@@ -37,12 +37,14 @@ export default defineConfig({
     },
 
     {
-      name: 'qa-chromium',
+      name: 'admin-qa-chromium',
+      dependencies: ['setup'],
       use: {
         ...devices['Desktop Chrome'],
         baseURL: environments.qa.baseURL,
         storageState: '.auth/admin.json',
       },
+      testMatch: /.*\.spec\.js/,
     },
 
     {
