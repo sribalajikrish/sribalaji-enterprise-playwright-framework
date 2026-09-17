@@ -29,10 +29,19 @@ export default defineConfig({
   projects: [
 
     {
+      name: 'setup',
+      testMatch: /auth\.setup\.js/,
+      use: {
+        baseURL: environments.qa.baseURL,
+      },
+    },
+
+    {
       name: 'qa-chromium',
       use: {
         ...devices['Desktop Chrome'],
         baseURL: environments.qa.baseURL,
+        storageState: '.auth/admin.json',
       },
     },
 
